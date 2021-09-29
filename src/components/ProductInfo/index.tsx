@@ -43,7 +43,12 @@ const ProductInfo : React.FC<ProductInfoProps>  = (props) => {
     selectedSize = props.product.childSkus[0].size;
     props.product.childSkus.forEach( (sku) => {
       sizes.push(<MenuItem value={sku.size}>{sku.size}</MenuItem>);
-    });  
+    });
+  }
+
+  var largeImageUrl = "";
+  if (props.product !== undefined && props.product.childSkus !== undefined && props.product.childSkus[0] !== undefined) {
+      largeImageUrl = props.product.childSkus[0].largeImageUrl;
   }
 
   return (
@@ -52,7 +57,7 @@ const ProductInfo : React.FC<ProductInfoProps>  = (props) => {
         <Grid item lg={4}>
           <Paper className="largeImage">
             <img
-              src="https://dummyimage.com/500x500/000/0011ff"
+              src={largeImageUrl}
               alt="Levi's 501 Original Fit Jeans Jeans para Hombre"
             />
           </Paper>

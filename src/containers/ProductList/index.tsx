@@ -1,5 +1,6 @@
 import React from "react";
 import ProductPreview from "../../components/ProductPreview";
+import ProductService from "../../services/ProductService";
 import Product from "../../types/Product";
 
 interface ListState {
@@ -19,6 +20,17 @@ class ProductList extends React.Component<{}, ListState> {
         return (
             productsList
         )
+    }
+
+    componentDidMount() {
+        ProductService.getAll()
+            .then(response => {
+                const products = response.data;
+                console.log(products);
+                this.setState({ products });
+            }).catch(error => {
+                console.log(error);
+            });
     }
 }
 
