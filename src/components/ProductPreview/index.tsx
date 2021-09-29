@@ -6,6 +6,10 @@ interface ProductPreviewProps {
   product: Product;
 }
 
+/**
+ * ProductPreview elements
+ * @returns ProductPreview UI elements
+ */
 const ProductPreview: React.FC<ProductPreviewProps> = (props) => {
   var listPrice = 0.0;
   if (

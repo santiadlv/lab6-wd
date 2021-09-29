@@ -7,11 +7,19 @@ interface ListState {
     products: Product[];
 }
 
+/**
+ * ProductList Container
+ * @extends {Component<Props, State>}
+ */
 class ProductList extends React.Component<{}, ListState> {
     state = {
         products: [] as Product[],
     }
 
+    /**
+    * Renders the container.
+    * @return {string} - HTML markup for the container
+    */
     render() {
         var productsList : any[] = [];
             this.state.products.forEach( (product) => {
