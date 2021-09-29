@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ProductDetail from './containers/ProductDetail';
+import ProductList from "./containers/ProductList";
 import Header from './containers/Header'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <React.Fragment>
       <Header/>
       <CssBaseline/>
-      <ProductDetail/>
+      <ProductList/>
     </React.Fragment>
   );
 }
